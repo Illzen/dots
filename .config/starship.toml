@@ -1,0 +1,165 @@
+# ~/.config/starship.toml
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+continuation_prompt = "▶▶"
+
+palette = "sakura"
+
+#format = '''
+#$os[┏━](bold magenta) $time [━━](bold magenta) $directory $fill $battery $shell $cmd_duration
+#[  ┗\[](bold magenta)$username[@](bold blue)$hostname[\]](bold magenta)$character
+#'''
+format = '''
+$os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character
+'''
+#└┌┐┘
+right_format = '''
+$cmd_duration[\[](bold magenta)$time $battery$shell[\]](bold magenta)
+'''
+
+[palettes.sakura]
+black = "#181425"
+bright-black = "#262b44"
+
+red = "#e43b44"
+bright-red = "#ff0044"
+
+green = "#3e8948"
+bright-green = "#63c74d"
+
+yellow = "#feae34"
+bright-yellow = "#fee761"
+
+blue = "#0099db"
+#blue = "#124e89"
+bright-blue = "#0099db"
+
+magenta = "#b55088"
+bright-megenta = "#f06292"
+
+cyan = "#008080"
+bright-cyan = "#66b2b2"
+
+white = "#c0cbdc"
+bright-white = "#ffffff"
+
+[username]
+style_user = "bold white"
+style_root = "bold red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+style = "bold bright-yellow"
+format = '[$hostname$ssh_symbol]($style)'
+
+[character]
+success_symbol = "[➜](bright-green) "
+error_symbol = "[✗](bright-red) "
+vimcmd_symbol = "[V](bright-green)"
+vimcmd_replace_one_symbol = "[V](bright-blue)"
+format = '$symbol(bold green)'
+
+[directory]
+style = "bold blue"
+truncation_length = 8
+truncation_symbol = '…/'
+
+[fill]
+symbol = "━"
+style = "bold magenta"
+
+[time]
+disabled = false
+style = "bold bright-white"
+format = "[🕙$time]($style)"
+time_format = "%a-%R"
+utc_time_offset = "+8"
+
+[cmd_duration]
+min_time = 0
+style = "bold yellow"
+format = "[$duration]($style)"
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = ' '
+style = 'dimmed green'
+format = '[RAM $ram | SWAP $swap]($style)'
+
+[shell]
+unknown_indicator = "unknown shell"
+style = "bold red"
+disabled = false
+format = "[$indicator]($style)"
+
+[battery]
+discharging_symbol = ' '
+unknown_symbol = ' '
+[[battery.display]]
+threshold = 15
+discharging_symbol = ' '
+style = "bold red"
+[[battery.display]]
+threshold = 40
+discharging_symbol = ' '
+style = "bold yellow"
+[[battery.display]]
+threshold = 80
+discharging_symbol = ' '
+style = "bold green"
+[[battery.display]]
+threshold = 100
+charging_symbol = ' '
+discharging_symbol = ' '
+style = "bold green"
+
+[os]
+format = "[$symbol]($style)"
+style = "bold blue"
+disabled = false
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
