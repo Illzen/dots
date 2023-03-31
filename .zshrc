@@ -5,7 +5,6 @@ export LANG=zh_CN.UTF-8
 #Themes
 eval "$(starship init zsh)"
 
-nitch
 
 #Alias
 alias sudo='sudo '
@@ -13,10 +12,15 @@ alias nv=' nvim '
 alias pm=' pacman '
 alias ls=' ls --color '
 alias grep=' grep --color '
-alias updatepac=' sudo pacman -Syyu '
-alias clearpac=' sudo pacman -Rns $(pacman -Qtdq) '
-alias updateyay='yay -Syyu '
 alias pacin='sudo pacman -S '
+alias pacup='sudo pacman -Syu '
+alias pacout='sudo pacman -Rns '
+alias paclist='sudo pacman -Qe '
+alias yayin='yay -S '
+alias yayup='yay -Syu '
+alias yayout='yay -Rns '
+alias yaylist='yay -Qe '
+alias docker='sudo docker '
 
 
 ### Added by Zinit's installer
@@ -53,4 +57,4 @@ SAVEHIST=1000
 bindkey -e
 autoload -Uz compinit
 compinit
-. /etc/profile.d/fzf.zsh
+#. /etc/profile.d/fzf.zsh
