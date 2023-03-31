@@ -14,7 +14,7 @@ palette = "sakura"
 #[  ┗\[](bold magenta)$username[@](bold blue)$hostname[\]](bold magenta)$character
 #'''
 format = '''
-$os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character
+$os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character$git_branch
 '''
 #└┌┐┘
 right_format = '''
