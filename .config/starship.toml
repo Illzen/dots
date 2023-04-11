@@ -14,12 +14,14 @@ palette = "sakura"
 #[  ┗\[](bold magenta)$username[@](bold blue)$hostname[\]](bold magenta)$character
 #'''
 format = '''
-$os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character$git_branch
-'''
+$os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character$git_branch'''
 #└┌┐┘
 right_format = '''
-$cmd_duration[\[](bold magenta)$time $battery$shell[\]](bold magenta)
+$cmd_duration[\[](bold magenta)$time $battery
+[\]](bold magenta)
 '''
+#$shell[\]](bold magenta)
+#'''
 
 [palettes.sakura]
 black = "#181425"
@@ -79,7 +81,7 @@ style = "bold magenta"
 [time]
 disabled = false
 style = "bold bright-white"
-format = "[🕙$time]($style)"
+format = "[$time]($style)"
 time_format = "%a-%R"
 utc_time_offset = "+8"
 
@@ -102,25 +104,25 @@ disabled = false
 format = "[$indicator]($style)"
 
 [battery]
-discharging_symbol = ' '
-unknown_symbol = ' '
+discharging_symbol = ''
+unknown_symbol = ''
+format = "[$symbol]($style)"
 [[battery.display]]
 threshold = 15
-discharging_symbol = ' '
+discharging_symbol = ''
 style = "bold red"
 [[battery.display]]
 threshold = 40
-discharging_symbol = ' '
+discharging_symbol = ''
 style = "bold yellow"
 [[battery.display]]
 threshold = 80
-discharging_symbol = ' '
 style = "bold green"
+discharging_symbol = ''
 [[battery.display]]
 threshold = 100
-charging_symbol = ' '
-discharging_symbol = ' '
 style = "bold green"
+discharging_symbol = ''
 
 [os]
 format = "[$symbol]($style)"
