@@ -20,16 +20,24 @@ require('lazy').setup( {
         require("nvim-tree").setup {}
     end,
   },	
-  {
-    "neovim/nvim-lspconfig",
-  },
+
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate" -- :MasonUpdate updates registry contents
   },
+
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = true,
   },
+
+  {
+    "neovim/nvim-lspconfig",
+  },
+
+  {
+    "mhartington/formatter.nvim",
+  },
+
 } )
 
