@@ -1,18 +1,38 @@
-# Created by newuser for 5.9
 DISABLE_MAGIC_FUNCTIONS='true'
 HIST_STAMPS="yyyy-mm-dd"
+#
+#Environment
+#
 export LANG=zh_CN.UTF-8
 export EDITOR=nvim
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/bin
+export JRE_HOME=/usr/lib/jvm/java-17-openjdk
+#
 #Themes
+#
 eval "$(starship init zsh)"
-
-
+#
+#Tmux
+#
+if [[ -z "$TMUX" ]] ;then
+    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+    if [[ -z "$ID" ]] ;then # if not available create a new one
+        tmux new-session
+    else
+        tmux attach-session -t "$ID" # if available attach to it
+    fi
+fi
+#
 #代理
-# export http_proxy='http://127.0.0.1'
-# export https_proxy='http://127.0.0.1'
-# export socks_proxy='socks://127.0.0.1'
-
+#
+export http_proxy='http://127.0.0.1'
+export https_proxy='http://127.0.0.1'
+export socks_proxy='socks://127.0.0.1'
+#
 #Alias
+#
+alias tomcaton='sudo /usr/share/tomcat10/bin/startup.sh'
+alias tomcatoff='sudo /usr/share/tomcat10/bin/shutdown.sh'
 alias sudo='sudo '
 alias nv=' nvim '
 alias pm=' pacman '
@@ -27,7 +47,8 @@ alias yayup='yay -Syu '
 alias yayout='yay -Rns '
 alias yaylist='yay -Qe '
 alias docker='sudo docker '
-alias systemctl='sudo systemctl'
+alias systemctl='sudo systemctl '
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 
 ### Added by Zinit's installer
