@@ -1,0 +1,17 @@
+[user]
+	email = 908413385@qq.com
+	name = Illzen
+[core]
+	editor = nvim
+[http]
+	version = HTTP/1.1
+	proxy = http://127.0.0.1:7890
+[https]
+	proxy = http://127.0.0.1:7890
+[socks]
+	proxy = http://127.0.0.1:7891
+[credential]
+	helper = store
+[safe]
+	directory = .
+	directory = /home/zen/filmdb
