@@ -1,20 +1,20 @@
-rm -rf ~/dots/.config/alacritty
+rm -rf ~/.config/alacritty
 ln -snf ~/dots/.config/alacritty ~/.config/
-rm -rf ~/dots/.config/cava
+rm -rf ~/.config/cava
 ln -snf ~/dots/.config/cava ~/.config/
-rm -rf ~/dots/.config/i3
+rm -rf ~/.config/i3
 ln -snf ~/dots/.config/i3 ~/.config/
-rm -rf ~/dots/.config/neofetch
+rm -rf ~/.config/neofetch
 ln -snf ~/dots/.config/neofetch ~/.config/
-rm -rf ~/dots/.config/nvim
+rm -rf ~/.config/nvim
 ln -snf ~/dots/.config/nvim ~/.config/
-rm -rf ~/dots/.config/picom
+rm -rf ~/.config/picom
 ln -snf ~/dots/.config/picom ~/.config/
-rm -rf ~/dots/.config/polybar
+rm -rf ~/.config/polybar
 ln -snf ~/dots/.config/polybar ~/.config/
-rm -rf ~/dots/.config/ranger
+rm -rf ~/.config/ranger
 ln -snf ~/dots/.config/ranger ~/.config/
-rm -rf ~/dots/.config/rofi
+rm -rf ~/.config/rofi
 ln -snf ~/dots/.config/rofi ~/.config/
 ln -snf ~/dots/.config/starship.toml ~/.config/starship.toml
 ln -snf ~/dots/.tmux.conf ~/.tmux.conf
