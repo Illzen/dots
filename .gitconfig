@@ -15,3 +15,8 @@
 [safe]
 	directory = .
 	directory = /home/zen/filmdb
+# [alias]
+#   git 
+[alias]
+	co = checkout
+  log = --pretty=oneline --graph --decorate --all
