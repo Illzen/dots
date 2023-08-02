@@ -17,8 +17,7 @@ format = '''
 $os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character$git_branch'''
 #└┌┐┘
 right_format = '''
-$cmd_duration[\[](bold magenta)$time $battery
-[\]](bold magenta)
+$cmd_duration[\[](bold magenta)$time[|](bold magenta)$battery[\]](bold magenta)
 '''
 #$shell[\]](bold magenta)
 #'''
