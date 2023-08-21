@@ -9,14 +9,15 @@
 [https]
 	proxy = http://127.0.0.1:7890
 [socks]
-	proxy = http://127.0.0.1:7891
+	proxy = socks://127.0.0.1:7891
 [credential]
 	helper = store
 [safe]
 	directory = .
 	directory = /home/zen/filmdb
-# [alias]
-#   git 
 [alias]
 	co = checkout
-  log = --pretty=oneline --graph --decorate --all
+  lg = log --graph --oneline --decorate
+  st = status -sv
+  br = branch
+  

@@ -105,7 +105,7 @@ format = "[$indicator]($style)"
 [battery]
 discharging_symbol = ''
 unknown_symbol = ''
-format = "[$symbol]($style)"
+format = "[$symbol$percentage]($style)"
 [[battery.display]]
 threshold = 15
 discharging_symbol = ''

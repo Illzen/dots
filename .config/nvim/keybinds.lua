@@ -12,7 +12,6 @@ map("n", "<C-d>", "8j", opt)
 -- nvim-tree
 
 map('n', '<leader>f', ':NvimTreeToggle<CR>', opt)
--- map('n', '<leader>f', ':NvimTreeFocus<CR>', opt)
 
 -- 分屏
 
@@ -36,6 +35,7 @@ map("n", "<leader>L", ":Lazy<CR>", opt)
 map("n", "<leader>M", ":Mason<CR>", opt)
 
 -- lsp相关
+
 
 vim.keymap.set('n', 'ge', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -71,3 +71,11 @@ vim.keymap.set('n', 'gq', vim.diagnostic.setloclist)
 --    end, opts)
 --    end,
 --  })
+
+-- mapping = cmp.mapping.preset.insert({
+--       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+--       ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--       ['<C-Space>'] = cmp.mapping.complete(),
+--       ['<C-e>'] = cmp.mapping.abort(),
+--       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+-- }),
