@@ -5,8 +5,6 @@ HIST_STAMPS="yyyy-mm-dd"
 #
 export LANG=zh_CN.UTF-8
 export EDITOR=nvim
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/bin
-export JRE_HOME=/usr/lib/jvm/java-17-openjdk
 #
 #Themes
 #
@@ -25,9 +23,26 @@ fi
 #
 #代理
 #
-export http_proxy='http://127.0.0.1:7890'
-export https_proxy='http://127.0.0.1:7890'
-export socks_proxy='socks://127.0.0.1:7891'
+export http_proxy='http://127.0.0.1:7890' 
+export https_proxy='http://127.0.0.1:7890' 
+export socks_proxy='socks://127.0.0.1:7891' 
+
+alias clash_on="
+                export http_proxy='http://127.0.0.1:7890' 
+                export https_proxy='http://127.0.0.1:7890' 
+                export socks_proxy='socks://127.0.0.1:7891' 
+                git config --global http.proxy 'http://127.0.0.1:7890'
+                git config --global https.proxy 'http://127.0.0.1:7890'
+                git config --global socks.proxy 'socks://127.0.0.1:7891'
+              "
+alias clash_off="
+                export http_proxy='' 
+                export https_proxy='' 
+                export socks_proxy='' 
+                git config --global http.proxy '' 
+                git config --global https.proxy '' 
+                git config --global socks.proxy '' 
+                "
 #
 #Alias
 #
@@ -86,3 +101,4 @@ bindkey -e
 autoload -Uz compinit
 compinit
 #. /etc/profile.d/fzf.zsh
+export PATH=$PATH:/home/zen/.spicetify
