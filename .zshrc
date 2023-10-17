@@ -12,20 +12,20 @@ eval "$(starship init zsh)"
 #
 #Tmux
 #
-if [[ -z "$TMUX" ]] ;then
-    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        tmux new-session
-    else
-        tmux attach-session -t "$ID" # if available attach to it
-    fi
-fi
+# if [[ -z "$TMUX" ]] ;then
+#     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+#     if [[ -z "$ID" ]] ;then # if not available create a new one
+#         tmux new-session
+#     else
+#         tmux attach-session -t "$ID" # if available attach to it
+#     fi
+# fi
 #
 #代理
 #
-export http_proxy='http://127.0.0.1:7890' 
-export https_proxy='http://127.0.0.1:7890' 
-export socks_proxy='socks://127.0.0.1:7891' 
+# export http_proxy='http://127.0.0.1:7890' 
+# export https_proxy='http://127.0.0.1:7890' 
+# export socks_proxy='socks://127.0.0.1:7891' 
 
 alias clash_on="
                 export http_proxy='http://127.0.0.1:7890' 
@@ -50,6 +50,7 @@ alias tomcaton='sudo /usr/share/tomcat10/bin/startup.sh'
 alias tomcatoff='sudo /usr/share/tomcat10/bin/shutdown.sh'
 alias sudo='sudo '
 alias nv=' nvim '
+alias v=' vim '
 alias pm=' pacman '
 alias ls=' ls --color '
 alias grep=' grep --color '

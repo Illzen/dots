@@ -5,11 +5,11 @@
 	editor = nvim
 [http]
 	version = HTTP/1.1
-	proxy = 
+	proxy = http://127.0.0.1:7890
 [https]
-	proxy = 
+	proxy = http://127.0.0.1:7890
 [socks]
-	proxy = 
+	proxy = socks://127.0.0.1:7891
 [credential]
 	helper = store
 [safe]
