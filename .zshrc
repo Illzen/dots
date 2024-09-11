@@ -1,5 +1,6 @@
 DISABLE_MAGIC_FUNCTIONS='true'
 HIST_STAMPS="yyyy-mm-dd"
+set -o vi
 #
 #Environment
 #
@@ -12,14 +13,14 @@ eval "$(starship init zsh)"
 #
 #Tmux
 #
-if [[ -z "$TMUX" ]] ;then
-    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        tmux new-session
-    else
-        tmux attach-session -t "$ID" # if available attach to it
-    fi
-fi
+# if [[ -z "$TMUX" ]] ;then
+#     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+#     if [[ -z "$ID" ]] ;then # if not available create a new one
+#         tmux new-session
+#     else
+#         tmux attach-session -t "$ID" # if available attach to it
+#     fi
+# fi
 #
 #代理
 #
@@ -53,6 +54,7 @@ alias nv=' nvim '
 alias pm=' pacman '
 alias ls=' ls --color '
 alias grep=' grep --color '
+alias gti=' git '
 alias pacin='sudo pacman -S '
 alias pacup='sudo pacman -Syu '
 alias pacout='sudo pacman -Rns '
@@ -63,7 +65,7 @@ alias yayout='yay -Rns '
 alias yaylist='yay -Qe '
 alias docker='sudo docker '
 alias systemctl='sudo systemctl '
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 
 ### Added by Zinit's installer
