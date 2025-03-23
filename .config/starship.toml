@@ -14,10 +14,10 @@ palette = "sakura"
 #[  ┗\[](bold magenta)$username[@](bold blue)$hostname[\]](bold magenta)$character
 #'''
 format = '''
-$os[\[](bold magenta)$username[@](bold magenta)$hostname[\]](bold magenta)$directory$character$git_branch'''
+$os$username[@](bold magenta)$hostname$directory$git_branch'''
 #└┌┐┘
 right_format = '''
-$cmd_duration[\[](bold magenta)$time[|](bold magenta)$battery[\]](bold magenta)
+$cmd_duration
 '''
 #$shell[\]](bold magenta)
 #'''

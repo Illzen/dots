@@ -1,88 +1,38 @@
-local opts = { noremap = true, silent = true }
+local on_attach = function(_, bufnr)
+	-- Enable completion triggered by <c-x><c-o>
+	local nmap = function(keys, func, desc)
+		if desc then
+			desc = 'LSP: ' .. desc
+		end
 
-require("lsp.lua")
-require("lsp.python")
-require("lsp.cpp")
-require("lsp.rust")
-require("lsp.bash")
+		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+	end
 
-vim.keymap.set('n', '<C-e>', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<C-q>', vim.diagnostic.setloclist, opts)
-
-default_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'gh', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', 'gH', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', 'ga', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', 'grm', vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set('n', 'glf', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
-    vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', 'grn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'grf', vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "gfm", function()
-        vim.lsp.buf.format({ async = true })
-    end, bufopts)
+	nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+	nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+	nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+	nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+	nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+	nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+	nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+	nmap('<leader>wl', function()
+		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	end, '[W]orkspace [L]ist Folders')
+	nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+	nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+	nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+	-- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+	nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
+	nmap("<space>f", function()
+		vim.lsp.buf.format { async = true }
+	end, "[F]ormat code")
 end
 
--- setup() is also available as an alias
-require('lspkind').setup({
-    -- DEPRECATED (use mode instead): enables text annotations
-    --
-    -- default: true
-    -- with_text = true,
-
-    -- defines how annotations are shown
-    -- default: symbol
-    -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-    mode = 'symbol_text',
-
-    -- default symbol map
-    -- can be either 'default' (requires nerd-fonts font) or
-    -- 'codicons' for codicon preset (requires vscode-codicons font)
-    --
-    -- default: 'default'
-    preset = 'codicons',
-
-    -- override preset symbols
-    --
-    -- default: {}
-    symbol_map = {
-      Text = "󰉿",
-      Method = "󰆧",
-      Function = "󰊕",
-      Constructor = "",
-      Field = "󰜢",
-      Variable = "󰀫",
-      Class = "󰠱",
-      Interface = "",
-      Module = "",
-      Property = "󰜢",
-      Unit = "󰑭",
-      Value = "󰎠",
-      Enum = "",
-      Keyword = "󰌋",
-      Snippet = "",
-      Color = "󰏘",
-      File = "󰈙",
-      Reference = "󰈇",
-      Folder = "󰉋",
-      EnumMember = "",
-      Constant = "󰏿",
-      Struct = "󰙅",
-      Event = "",
-      Operator = "󰆕",
-      TypeParameter = "",
-    },
+require('lspconfig').lua_ls.setup({
+	on_attach = on_attach,
+	capabilitie = require('cmp_nvim_lsp').default_capabilities()
+})
+require('lspconfig').rust_analyzer.setup({
+	on_attach = on_attach,
+	capabilitie = require('cmp_nvim_lsp').default_capabilities()
 })

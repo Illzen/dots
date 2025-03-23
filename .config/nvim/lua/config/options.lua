@@ -10,8 +10,9 @@ vim.opt.expandtab = false
 -- vim.opt.softtabstop = 2
 
 -- 显示缩进
-vim.opt.list = true
--- vim.opt.listchars = "tab:--,trail:_,nbsp:+"
+vim.opt.list = false
+--vim.opt.listchars = "tab:--,trail:_,nbsp:+"
+vim.opt.listchars = "trail:_"
 
 -- 复制上一行缩进
 vim.opt.autoindent = true

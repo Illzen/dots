@@ -1,23 +1,16 @@
 [user]
-	name = Illzen
-	email = 908413385@qq.com
+        name = Illzen
+        email = 908413385@qq.com
 [core]
-	editor = nvim
-[http]
-	version = HTTP/1.1
-	proxy = 
-[https]
-	proxy = 
-[socks]
-	proxy = 
+        editor = nvim
 [credential]
-	helper = store
+        helper = store
 [safe]
-	directory = .
-	directory = /home/zen/filmdb
+        directory = .
 [alias]
-	co = checkout
+        co = checkout
   lg = log --graph --oneline --decorate
   st = status -sv
   br = branch
-  
+
+
