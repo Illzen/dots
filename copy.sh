@@ -1,8 +1,12 @@
 rm -rf ~/.config/nvim 
-ln -snf ./.config/nvim ~/.config/
-ln -snf ./.config/starship.toml ~/.config/starship.toml
-ln -snf ./.tmux.conf ~/.tmux.conf
-ln -snf ./.zshrc ~/.zshrc
+cp -r ./.config/nvim ~/.config/
+rm ~/.config/starship.toml
+cp ./.config/starship.toml ~/.config/
+rm ~/.tmux.conf
+cp ./.tmux.conf ~/.tmux.conf
+rm ~/.zshrc
+cp ./.zshrc ~
+rm ~/.gitconfig
 cp ./.gitconfig ~/.gitconfig
 rm -rf ~/.tmux
 mkdir ~/.tmux/
