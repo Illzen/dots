@@ -56,6 +56,7 @@ alias yaylist='yay -Qe '
 alias docker='sudo docker '
 alias systemctl='sudo systemctl '
 alias yz='yazi '
+alias dnf='sudo dnf '
 # alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 
@@ -76,6 +77,7 @@ autoload -Uz _zinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
+zinit light none9632/zsh-sudo
 
 
 # (this is currently required for annexes)
